@@ -4,6 +4,7 @@ enterprise ML chatbot for work
 ~~~~~~~~~~~
 Description
 ~~~~~~~~~~~
+-needs update
 
     The machine learning aspect of this code involves using historical energy usage data to train a linear regression model, which can then be used to predict the user's energy usage for the current day.
 
@@ -12,3 +13,10 @@ Description
     Once the model is trained, the chatbot can use it to provide personalized responses based on the user's energy usage. For example, the usage response uses the model to predict the user's energy usage for the current day, based on the day of the week. The history response provides a summary of the user's energy usage for the past week, based on the historical data that was used to train the model.
 
     Overall, the machine learning aspect of this code allows the chatbot to provide more personalized and accurate responses based on the user's energy usage patterns, which can help the user better understand their energy usage and identify areas where they can save energy and reduce costs.
+
+
+v10
+Used the matplotlib library to create visualizations
+
+With these changes, users can now type 'chart' to visualize their energy usage over time and 'heatmap' to see 
+which times of the day they tend to use the most energy.
