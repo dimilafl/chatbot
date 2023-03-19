@@ -13,22 +13,18 @@ nlp = spacy.load("en_core_web_sm")
 # new additions
 
 def handle_complex_question(question, appliance_data):
-    # Process the user's question
-    doc = nlp(question)
-
     # Identify if the question is about appliances and energy usage
     question_about_appliances = False
     question_about_energy_usage = False
     appliance_name = None
 
-    for token in doc:
-        # Check if the token's lemma matches an appliance keyword or an appliance_data key
-        if token.lemma_.lower() in ["appliance", "device"] or token.text.lower() in appliance_data:
+    for key in appliance_data.keys():
+        if key in question.lower():
             question_about_appliances = True
-            if token.text.lower() in appliance_data:
-                appliance_name = token.text.lower()
-        if token.lemma_.lower() in ["energy", "power", "usage", "consumption"]:
-            question_about_energy_usage = True
+            appliance_name = key
+
+    if any(keyword in question.lower() for keyword in ["energy", "power", "usage", "consumption"]):
+        question_about_energy_usage = True
 
     if question_about_appliances and question_about_energy_usage:
         if appliance_name:
@@ -260,7 +256,11 @@ if __name__ == "__main__":
     
     #What devices/appliances are using the most energy in my home?
 
-    #How much energy is the refrigerator using?
+    #H ow much energy is the refrigerator using?
+
+    # How much energy is the washing machine using?
+    # How much energy is the air conditioner using?
+
 # ~~~~~~~~~~~~~~~~~~~~~~
 
 
