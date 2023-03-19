@@ -15,7 +15,7 @@ day_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
 usage_data["day_name"] = usage_data["day"].apply(lambda x: day_names[x % 7])
 
 # Save the data to a CSV file
-usage_data.to_csv("ML\energy_usage_daynames.csv", index=False)
+usage_data.to_csv("home\energy_usage_daynames.csv", index=False)
 
 
 # This code generates random energy usage data for a week using the random.uniform() function, 
