@@ -20,3 +20,6 @@ Used the matplotlib library to create visualizations
 
 With these changes, users can now type 'chart' to visualize their energy usage over time and 'heatmap' to see 
 which times of the day they tend to use the most energy.
+
+v16
+natural language processing, added compound words
