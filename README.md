@@ -23,3 +23,24 @@ which times of the day they tend to use the most energy.
 
 v16
 natural language processing, added compound words
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Summary-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This code is a chatbot that helps users monitor their energy usage. It has several features, including answering questions, providing tips, and visualizing energy usage data. The chatbot uses a linear regression model to predict daily energy usage, and provides energy-saving tips based on the predicted usage. It can also create a line chart of energy usage over time and a heatmap of energy usage by the time of day. Additionally, the chatbot uses the Spacy library for natural language processing to answer more complex questions about energy usage by appliances.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Summary of the code:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Import necessary libraries and load the Spacy model.
+Define the handle_complex_question() function for handling appliance-related questions.
+Provide sample data for energy usage by appliances.
+Load the historical energy usage data and handle file-related exceptions.
+Fit a linear regression model to the data.
+Define energy-saving tips based on energy usage levels.
+Define the chatbot's responses.
+Define the chatbot's main loop, which includes handling complex questions and visualizations.
+Define functions to plot energy usage over time and create a heatmap.
+Run the chatbot.
