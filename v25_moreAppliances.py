@@ -95,12 +95,17 @@ appliance_data = {
     "air conditioner": 4.0,
     "tv": 0.8,
     "oven": 1.5,
+    "dishwasher": 1.3,
+    "dryer": 3.0,
+    "microwave": 0.6,
+    "computer": 0.4,
+    "water heater": 4.5,
 }
 appliance_categories = {
-    "Kitchen Appliances": ["refrigerator", "oven"],
-    "Laundry Appliances": ["washing machine"],
-    "Entertainment": ["tv"],
-    "Cooling & Heating": ["air conditioner"],
+    "Kitchen Appliances": ["refrigerator", "oven", "dishwasher", "microwave"],
+    "Laundry Appliances": ["washing machine", "dryer"],
+    "Entertainment": ["tv", "computer"],
+    "Cooling & Heating": ["air conditioner", "water heater"],
 }
 
 # Load the extended historical energy usage data
@@ -443,6 +448,7 @@ if __name__ == "__main__":
     # How much energy is the air conditioner using?
 
 
+
     # TV usage?
         #these all can be used
     # energy power usage consumption
@@ -465,6 +471,18 @@ if __name__ == "__main__":
         # highest_category_usage
         # lowest_category_usage
         # compare_categories
+
+    # v25
+        # refrigerator
+        # washing machine
+        # air conditioner
+        # tv
+        # oven
+        # dishwasher
+        # dryer
+        # microwave
+        # computer
+        # water heater
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~
