@@ -7,9 +7,25 @@ import numpy as np
 import spacy
 from spacy.matcher import Matcher
 import re
+import Levenshtein
 
 
 nlp = spacy.load("en_core_web_sm")
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# new additions v21
+
+def find_closest_keyword(user_input):
+    min_distance = float('inf')
+    closest_keyword = None
+
+    for keyword in responses.keys():
+        distance = Levenshtein.distance(user_input, keyword)
+        if distance < min_distance:
+            min_distance = distance
+            closest_keyword = keyword
+
+    return closest_keyword if min_distance <= 2 else None
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # new additions
@@ -240,8 +256,14 @@ def main():
 
 
         else:
-            response = handle_complex_question(user_input, appliance_data)
-            print("Chatbot: " + response)
+            closest_keyword = find_closest_keyword(user_input)
+            if closest_keyword:
+                print(f"Chatbot: It seems like you meant '{closest_keyword}'. Here's the response for that:")
+                print("Chatbot: " + responses[closest_keyword])
+            else:
+                response = handle_complex_question(user_input, appliance_data)
+                print("Chatbot: " + response)
+
 
 
 
@@ -362,6 +384,13 @@ if __name__ == "__main__":
 
     # bar chart
     # pie chart
+
+    # what temperature is it?
+    # what day is it?
+    # how hot is it?
+    
+    # day
+    # temperature
 
 #NLP
     # What appliances are using the most energy in my home?

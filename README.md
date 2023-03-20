@@ -24,6 +24,26 @@ which times of the day they tend to use the most energy.
 v16
 natural language processing, added compound words
 
+v18 
+data viz, new additions pie and bar charts - would like to add more
+
+v21
+The find_closest_keyword() function calculates the Levenshtein distance between the user input and the predefined response keywords. If the minimum distance is less than or equal to 2 (indicating a small typo or a similar word), it returns the closest keyword. If the minimum distance is greater than 2, it returns None.
+
+In the main() function, if the user input is not found in the responses dictionary, the code checks for the closest keyword using the find_closest_keyword() function. If there's a close match, the chatbot prints the response for the closest keyword. If there's no close match, it proceeds with the existing logic for handling complex questions.
+
+    ~~~for example~~~
+    You: hellp
+    Chatbot: It seems like you meant 'help'. Here's the response for that:
+    Chatbot: Sure, here are some things you can do to monitor your energy usage:
+
+    - Use a smart thermostat to control your heating and cooling
+    -....etc
+
+    You: hiii
+    Chatbot: It seems like you meant 'hi'. Here's the response for that:
+    Chatbot: Hello! How can I help you monitor your energy usage today?
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Summary-
