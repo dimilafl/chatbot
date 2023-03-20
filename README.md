@@ -4,12 +4,12 @@ enterprise ML chatbot for work
 
 (reorganize this - check w/ other files in NEXT folder)
 
-a lot of redundcany right below....
+a lot of redundancy right below....
 
 ~~~~~~~~~~~
 Description
 ~~~~~~~~~~~
--needs update
+- needs update
 
     The machine learning aspect of this code involves using historical energy usage data to train a linear regression model, which can then be used to predict the user's energy usage for the current day.
 
