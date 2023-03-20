@@ -28,25 +28,15 @@ This code is a chatbot that helps users monitor their energy usage. It has sever
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Summary of the code:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Import necessary libraries and load the Spacy model.
-
 Define the handle_complex_question() function for handling appliance-related questions.
-
 Provide sample data for energy usage by appliances.
-
 Load the historical energy usage data and handle file-related exceptions.
-
 Fit a linear regression model to the data.
-
 Define energy-saving tips based on energy usage levels.
-
 Define the chatbot's responses.
-
 Define the chatbot's main loop, which includes handling complex questions and visualizations.
-
 Define functions to plot energy usage over time and create a heatmap.
-
 Run the chatbot.
 
 
