@@ -16,6 +16,7 @@ usage_data["day_name"] = usage_data["day"].apply(lambda x: day_names[x % 7])
 usage_data["is_weekend"] = usage_data["day"].apply(lambda x: 1 if x % 7 >= 5 else 0)
 
 # Save the data to a CSV file
-usage_data.to_csv("home\energy_usage_extended.csv", index=False)
+# usage_data.to_csv("home\\energy_usage_extended.csv", index=False)
+usage_data.to_csv("C:\\Users\\dimil\\Documents\\workspace-home\\home\\energy_usage_extended.csv", index=False)
 
 # This modified code adds a "temperature" column with random temperature values between 15 and 35 degrees Celsius, as well as an "is_weekend" column, which takes the value 1 for weekends and 0 for weekdays. The new CSV file is called "energy_usage_extended.csv".
