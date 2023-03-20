@@ -2,6 +2,10 @@
 enterprise ML chatbot for work
 
 
+(reorganize this - check w/ other files in NEXT folder)
+
+a lot of redundcany right below....
+
 ~~~~~~~~~~~
 Description
 ~~~~~~~~~~~
@@ -14,40 +18,6 @@ Description
     Once the model is trained, the chatbot can use it to provide personalized responses based on the user's energy usage. For example, the usage response uses the model to predict the user's energy usage for the current day, based on the day of the week. The history response provides a summary of the user's energy usage for the past week, based on the historical data that was used to train the model.
 
     Overall, the machine learning aspect of this code allows the chatbot to provide more personalized and accurate responses based on the user's energy usage patterns, which can help the user better understand their energy usage and identify areas where they can save energy and reduce costs.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Version History
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-~~ v10 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Used the matplotlib library to create visualizations
-
-With these changes, users can now type 'chart' to visualize their energy usage over time and 'heatmap' to see 
-which times of the day they tend to use the most energy.
-
-~~ v16 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-natural language processing, added compound words
-
-~~ v18 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-data viz, new additions pie and bar charts - would like to add more
-
-~~ v21 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The find_closest_keyword() function calculates the Levenshtein distance between the user input and the predefined response keywords. If the minimum distance is less than or equal to 2 (indicating a small typo or a similar word), it returns the closest keyword. If the minimum distance is greater than 2, it returns None.
-
-In the main() function, if the user input is not found in the responses dictionary, the code checks for the closest keyword using the find_closest_keyword() function. If there's a close match, the chatbot prints the response for the closest keyword. If there's no close match, it proceeds with the existing logic for handling complex questions.
-
-    ~~~ for example ~~~
-    You: hellp
-    Chatbot: It seems like you meant 'help'. Here's the response for that:
-    Chatbot: Sure, here are some things you can do to monitor your energy usage:
-
-    - Use a smart thermostat to control your heating and cooling
-    -....etc
-
-    You: hiii
-    Chatbot: It seems like you meant 'hi'. Here's the response for that:
-    Chatbot: Hello! How can I help you monitor your energy usage today?
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,3 +64,53 @@ The code uses a linear regression model from scikit-learn to fit the historical 
 It predicts the energy usage for the current day based on the day of the week, temperature, and whether it is a weekend.
 
 Depending on the predicted energy usage, the chatbot provides appropriate energy-saving tips to the use
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version History
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~ v10 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Used the matplotlib library to create visualizations
+
+With these changes, users can now type 'chart' to visualize their energy usage over time and 'heatmap' to see 
+which times of the day they tend to use the most energy.
+
+~~ v16 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+natural language processing, added compound words
+
+~~ v18 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+data viz, new additions pie and bar charts - would like to add more
+
+~~ v21 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The find_closest_keyword() function calculates the Levenshtein distance between the user input and the predefined response keywords. If the minimum distance is less than or equal to 2 (indicating a small typo or a similar word), it returns the closest keyword. If the minimum distance is greater than 2, it returns None.
+
+In the main() function, if the user input is not found in the responses dictionary, the code checks for the closest keyword using the find_closest_keyword() function. If there's a close match, the chatbot prints the response for the closest keyword. If there's no close match, it proceeds with the existing logic for handling complex questions.
+
+    ~~~ for example ~~~
+    You: hellp
+    Chatbot: It seems like you meant 'help'. Here's the response for that:
+    Chatbot: Sure, here are some things you can do to monitor your energy usage:
+
+    - Use a smart thermostat to control your heating and cooling
+    -....etc
+
+    You: hiii
+    Chatbot: It seems like you meant 'hi'. Here's the response for that:
+    Chatbot: Hello! How can I help you monitor your energy usage today?
+
+
