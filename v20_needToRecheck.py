@@ -6,12 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import spacy
 from spacy.matcher import Matcher
-
-
-#error
-
-# C:\Users\dimil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but LinearRegression was fitted with feature names
-#   warnings.warn(
+import re
 
 
 nlp = spacy.load("en_core_web_sm")
@@ -49,6 +44,32 @@ def handle_complex_question(question, appliance_data):
 
 
 
+def handle_temperature_question():
+    return "The current temperature is 22°C."
+
+def handle_day_question():
+    return f"Today is {datetime.datetime.now().strftime('%A')}."
+
+patterns = [
+    (re.compile(r'how hot.*|.*temperature.*'), handle_temperature_question),
+    (re.compile(r'what day.*|.*day today.*'), handle_day_question),
+]
+
+
+def process_user_input(user_input):
+    doc = nlp(user_input)
+
+    for token in doc:
+        if token.dep_ == "ROOT":
+            if token.lemma_ == "temperature":
+                return handle_temperature_question()
+            elif token.lemma_ == "day":
+                return handle_day_question()
+
+    return None
+
+
+
 #In order to provide a breakdown of energy usage by appliance, I need to have data on the energy usage of various appliances.
 #For this example, I created a sample dictionary containing energy usage data for different appliances:
 
@@ -81,7 +102,9 @@ appliance_categories = {
 
 # Load the extended historical energy usage data
 try:
-    usage_data = pd.read_csv("home\energy_usage_extended.csv")
+    # usage_data = pd.read_csv("home\energy_usage_extended.csv")
+    usage_data = pd.read_csv("C:\\Users\\dimil\\Documents\\workspace-home\\home\\energy_usage_extended.csv")
+
 except FileNotFoundError:
     print("Error: Could not find the energy usage data file.")
     exit()
@@ -152,6 +175,24 @@ responses = {
 def main():
     while True:
         user_input = input("You: ").lower()
+        matched_pattern = False
+
+        for pattern, handler in patterns:
+            if pattern.match(user_input):
+                print("Chatbot:", handler())
+                matched_pattern = True
+                break
+
+        if matched_pattern:
+            continue
+
+        processed_input = process_user_input(user_input)
+
+        if processed_input is not None:
+            print("Chatbot:", processed_input)
+            continue
+
+
         if user_input in responses:
             if user_input == "tip":
                 # Get the user's energy usage for today
@@ -272,6 +313,15 @@ def plot_energy_usage_pie_chart(appliance_data):
 # Run the chatbot
 if __name__ == "__main__":
     main()
+
+
+
+
+#error
+
+# C:\Users\dimil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but LinearRegression was fitted with feature names
+#   warnings.warn(
+
 
 
 
