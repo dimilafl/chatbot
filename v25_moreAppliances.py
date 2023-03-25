@@ -418,7 +418,6 @@ if __name__ == "__main__":
     # tip
 
 
-
 # new ones... try this
     # time
     # chart
@@ -446,7 +445,6 @@ if __name__ == "__main__":
     # How much energy is the refrigerator using?
     # How much energy is the washing machine using?
     # How much energy is the air conditioner using?
-
 
 
     # TV usage?
