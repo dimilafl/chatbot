@@ -110,7 +110,7 @@ appliance_categories = {
 
 # Load the extended historical energy usage data
 try:
-    usage_data = pd.read_csv("C:\\Users\\dimil\\Documents\\workspace-home\\home\\energy_usage_extended.csv")
+    usage_data = pd.read_csv("/Users/dimitrilafleur/Documents/GitHub/chatbot/energy_usage_extended.csv")
 
 except FileNotFoundError:
     print("Error: Could not find the energy usage data file.")
