@@ -369,7 +369,8 @@ def main():
                     print("Chatbot: Please mention two appliances to compare their energy usage.")
 
             elif user_input.startswith("save_bar_chart"):
-                file_name = "energy_usage_bar_chart.png"
+                file_name = "/Users/dimitrilafleur/Documents/GitHub/chatbot/energy_usage_bar_chart.png"
+                # file_name = "energy_usage_bar_chart.png"
                 save_energy_usage_bar_chart(appliance_data, file_name)
 
             
@@ -586,6 +587,13 @@ if __name__ == "__main__":
 # category_percentage
 # compare_appliances
 # save_bar_chart
+
+# v28
+
+# highest_energy_appliance
+# lowest_energy_appliance
+# average_energy_usage
+    #this one is per appliance rather than per day
 
 # ~~~~~~~~~~~~~~~~~~~~~~
 
